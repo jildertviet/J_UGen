@@ -1,0 +1,4 @@
+class ofColor{
+public:
+  ofColor(){}
+};
