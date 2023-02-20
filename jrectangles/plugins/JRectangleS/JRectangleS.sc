@@ -1,5 +1,6 @@
 JRectangleS : UGen {
 	*kr { |
+		id=0,
 		loc=#[0,0,0],
 		size=#[100, 100, 0],
 		direction=#[1,0,0],
@@ -7,10 +8,13 @@ JRectangleS : UGen {
 		speed=1,
 		lineWidth=1,
 		bMove=0,
-		layer=2
+		layer=2,
+		rgba=#[255,255,255,1.0],
+		bFilled=1
 		|
 		^this.multiNew('control',
-		Impulse.kr(60),
+		id,
+		Impulse.kr(120),
 		loc[0],
 		loc[1],
 		loc[2],
@@ -26,7 +30,12 @@ JRectangleS : UGen {
 		speed,
 		lineWidth,
 		bMove,
-		layer
+		layer,
+		rgba[0],
+		rgba[1],
+		rgba[2],
+		rgba[3],
+		bFilled
 		);
 	}
 	checkInputs {

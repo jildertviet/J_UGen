@@ -13,8 +13,14 @@ namespace JRectangleS {
 JRectangleS::JRectangleS() {
     mCalcFunc = make_calc_function<JRectangleS, &JRectangleS::next>();
 
+    subID = in(0)[0];
+    char encodedBytes[4];
+    encodedBytes[0] = (char)jevent::JRectangle;
+    encodedBytes[1] = subID;
+    int encodedInt;
+    memcpy(&encodedInt, encodedBytes, sizeof(int));
     readValues();
-    SendNodeReply(&(this->mParent->mNode), jevent::JRectangle, "/create", NUM_BUSSES, valuesToFloatArray());
+    SendNodeReply(&(this->mParent->mNode), encodedInt, "/create", NUM_BUSSES, valuesToFloatArray());
     next(1);
 }
 
@@ -25,11 +31,11 @@ void JRectangleS::clearUpdateArray(){
 
 JRectangleS::~JRectangleS(){
   cout << "Delete" << endl;
-  SendNodeReply(&(this->mParent->mNode), -1, "/kill", 0, nullptr);
+  SendNodeReply(&(this->mParent->mNode), subID, "/kill", 0, nullptr);
 }
 
 void JRectangleS::next(int inNumSamples) {
-    const float* trig = in(0);
+    const float* trig = in(1);
     for (int j = 0; j < inNumSamples; j++) {
         float curtrig = trig[j];
         if (curtrig > 0.f && prevtrig <= 0.f) {
@@ -46,23 +52,13 @@ void JRectangleS::readValues(){
     //   numToSend++;
     // }
     if(values[i])
-      *values[i] = in(i+1)[0];
+      *values[i] = in(i+2)[0];
   }
 }
 
 void JRectangleS::update(){
   readValues();
-  // const float* locX = in(1);
-  // const float* locY = in(2);
-  float* valuesT = new float[4];
-  memset(valuesT, 0x00, sizeof(float)*4);
-  valuesT[0] = 3.14;
-  int replyId = 0;
-
-  // cout << in(1)[0] << ", " << in(2)[0] << endl;
-  // Check all values vs. input busses: if changed, add to msg.
-
-  SendNodeReply(&(this->mParent->mNode), replyId, "/update", NUM_BUSSES, valuesToFloatArray());
+  SendNodeReply(&(this->mParent->mNode), subID, "/update", NUM_BUSSES, valuesToFloatArray());
 }
 
 } // namespace JRectangleS
