@@ -1,0 +1,26 @@
+class:: JRectangleS
+summary:: JRectangleS for ofxJVisuals
+related:: TODO
+categories:: UGens>TODO
+
+description::
+
+JRectangleS for ofxJVisuals
+
+
+classmethods::
+
+method::ar, kr
+
+argument::TODO
+
+argument::TODO
+
+
+examples::
+
+code::
+
+{ JRectangleS.ar(/* TODO */) }.play
+
+::

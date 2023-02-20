@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -shared  -o JRectangleS_scsynth.so CMakeFiles/JRectangleS_scsynth.dir/plugins/JRectangleS/JRectangleS.cpp.o 
