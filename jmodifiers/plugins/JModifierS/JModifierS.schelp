@@ -1,0 +1,26 @@
+class:: JModifierS
+summary:: Modifier (Array) for ofxJVisuals
+related:: TODO
+categories:: UGens>TODO
+
+description::
+
+Modifier (Array) for ofxJVisuals
+
+
+classmethods::
+
+method::ar, kr
+
+argument::TODO
+
+argument::TODO
+
+
+examples::
+
+code::
+
+{ JModifierS.ar(/* TODO */) }.play
+
+::

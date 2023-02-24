@@ -1,4 +1,4 @@
-JRectangleS : JEventS {
+JModifierS : JEventS {
 	checkInputs {
 		^this.checkValidInputs;
 	}

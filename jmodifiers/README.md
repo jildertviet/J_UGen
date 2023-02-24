@@ -1,8 +1,8 @@
-# JRectangleS
+# JModifierS
 
 Author: Jildert Viet
 
-JRectangleS UGen for ofxJVisuals
+Modifier (Array) for ofxJVisuals
 
 ### Requirements
 
@@ -13,8 +13,8 @@ JRectangleS UGen for ofxJVisuals
 
 Clone the project:
 
-    git clone https://github.com/jildertviet/JRectangleS
-    cd JRectangleS
+    git clone https://github.com/jildert.viet/jmodifiers
+    cd jmodifiers
     mkdir build
     cd build
 

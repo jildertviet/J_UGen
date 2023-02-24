@@ -39,10 +39,10 @@ function(sc_add_server_plugin_properties target is_supernova)
         set_target_properties(${target} PROPERTIES SUFFIX ".scx")
     endif()
 
-    get_filename_component(DIR_ONE_ABOVE ../ ABSOLUTE)
     target_include_directories(${target} PUBLIC
         ${SC_PATH}/include/plugin_interface
         ${SC_PATH}/include/common
+        ${SC_PATH}/common
 
         /home/jildert/of_v0.11.2_linux64gcc6_release/addons/ofxJVisuals/src/Event
         /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm

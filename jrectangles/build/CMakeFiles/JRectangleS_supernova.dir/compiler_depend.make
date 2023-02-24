@@ -208,6 +208,7 @@ CMakeFiles/JRectangleS_supernova.dir/plugins/JRectangleS/JRectangleS.cpp.o: ../p
   /home/jildert/Downloads/supercollider/include/common/function_attributes.h \
   ../plugins/JRectangleS/JRectangleS.hpp \
   /home/jildert/Downloads/supercollider/include/common/SC_Reply.h \
+  /home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jeventbases/plugins/JEventBaseS/JEventBaseS.hpp \
   /home/jildert/of_v0.11.2_linux64gcc6_release/addons/ofxJVisuals/src/Event/JEventBase.hpp \
   /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/glm.hpp \
   /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/detail/_fixes.hpp \
@@ -703,6 +704,8 @@ CMakeFiles/JRectangleS_supernova.dir/plugins/JRectangleS/JRectangleS.cpp.o: ../p
 
 /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/detail/type_vec4.inl:
 
+/home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/vec4.hpp:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
 /usr/include/c++/11/debug/assertions.h:
@@ -1187,8 +1190,6 @@ CMakeFiles/JRectangleS_supernova.dir/plugins/JRectangleS/JRectangleS.cpp.o: ../p
 
 /home/jildert/Downloads/supercollider/include/plugin_interface/SC_Unit.h:
 
-/home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/vec4.hpp:
-
 /usr/include/c++/11/tr1/gamma.tcc:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
@@ -1246,6 +1247,10 @@ CMakeFiles/JRectangleS_supernova.dir/plugins/JRectangleS/JRectangleS.cpp.o: ../p
 /usr/include/c++/11/tuple:
 
 /home/jildert/Downloads/supercollider/include/common/SC_Reply.h:
+
+/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jeventbases/plugins/JEventBaseS/JEventBaseS.hpp:
+
+/home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/detail/qualifier.hpp:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
@@ -1308,8 +1313,6 @@ CMakeFiles/JRectangleS_supernova.dir/plugins/JRectangleS/JRectangleS.cpp.o: ../p
 /usr/include/asm-generic/errno-base.h:
 
 /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/fwd.hpp:
-
-/home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/detail/qualifier.hpp:
 
 /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/ext/matrix_double4x2_precision.hpp:
 

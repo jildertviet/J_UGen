@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DJRectangleS_scsynth_EXPORTS -DNOVA_SIMD
 
-CXX_INCLUDES = -I/home/jildert/Downloads/supercollider/external_libraries/nova-simd -I/home/jildert/Downloads/supercollider/include/plugin_interface -I/home/jildert/Downloads/supercollider/include/common -I/home/jildert/of_v0.11.2_linux64gcc6_release/addons/ofxJVisuals/src/Event -I/home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm -I/home/jildert/.local/share/SuperCollider/Extensions/J_UGen
+CXX_INCLUDES = -I/home/jildert/Downloads/supercollider/external_libraries/nova-simd -I/home/jildert/Downloads/supercollider/include/plugin_interface -I/home/jildert/Downloads/supercollider/include/common -I/home/jildert/of_v0.11.2_linux64gcc6_release/addons/ofxJVisuals/src/Event -I/home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm -I/home/jildert/.local/share/SuperCollider/Extensions/J_UGen -I/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jeventbases/plugins/JEventBaseS
 
-CXX_FLAGS = -fPIC -fvisibility=hidden
+CXX_FLAGS = -g -fPIC -fvisibility=hidden
 
