@@ -1,0 +1,3 @@
+JEventBaseS : UGen {
+  
+}

@@ -1,0 +1,26 @@
+class:: JEventBaseS
+summary:: JEventBase Server plugin, SC specific
+related:: TODO
+categories:: UGens>TODO
+
+description::
+
+JEventBase Server plugin, SC specific
+
+
+classmethods::
+
+method::ar, kr
+
+argument::TODO
+
+argument::TODO
+
+
+examples::
+
+code::
+
+{ JEventBaseS.ar(/* TODO */) }.play
+
+::
