@@ -1,0 +1,26 @@
+class:: JVormS
+summary:: 
+related:: TODO
+categories:: UGens>TODO
+
+description::
+
+
+
+
+classmethods::
+
+method::ar, kr
+
+argument::TODO
+
+argument::TODO
+
+
+examples::
+
+code::
+
+{ JVormS.ar(/* TODO */) }.play
+
+::

@@ -12,7 +12,7 @@ JRectangleS::JRectangleS() {
     mCalcFunc = make_calc_function<JRectangleS, &JRectangleS::next>();
     type = jevent::JRectangle;
 
-    JEventBaseS::init(); // readValues + create
+    init(); // readValues + create
     // next(1); // Am I missing the first trigger if I don't do this?
 }
 
@@ -26,8 +26,7 @@ JRectangleS::JRectangleS() {
 // }
 
 void JRectangleS::next(int inNumSamples) {
-    // if(JEventBaseS::checkTrigger(inNumSamples))
-      // JEventBaseS::update();
+    JEventBaseS::next(inNumSamples);
 }
 
 } // namespace JRectangleS

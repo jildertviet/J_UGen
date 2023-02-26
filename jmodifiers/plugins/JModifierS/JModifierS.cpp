@@ -1,5 +1,5 @@
 // PluginJModifierS.cpp
-// Jildert Viet (jildert.viet@site.com)
+// Jildert Viet
 
 #include "SC_PlugIn.hpp"
 #include "JModifierS.hpp"
@@ -15,6 +15,11 @@ JModifierS::JModifierS() {
     }
     // type = jevent::JModifierS;
     init();
+    // Send msg: /connect, connectionType::modifier, targetSubID
+    float* msg = new float[2];
+    msg[0] = (float)jevent::ConnectionType::Modifier;
+    msg[1] = *(values[22]); // Target subID
+    SendNodeReply(&(this->mParent->mNode), subID, "/connect", 2, msg);
 }
 
 JModifierS::~JModifierS(){
@@ -22,8 +27,7 @@ JModifierS::~JModifierS(){
 }
 
 void JModifierS::next(int nSamples) {
-  if(checkTrigger(nSamples))
-    update();
+  JEventBaseS::next(nSamples);
 }
 
 } // namespace JModifierS

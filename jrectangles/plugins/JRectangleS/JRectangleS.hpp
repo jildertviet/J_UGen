@@ -18,9 +18,6 @@ public:
 private:
     // Calc function
     void next(int inNumSamples);
-    void update();
-    void readValues();
-    void clearUpdateArray();
 
     // bool bNeedsUpdate[NUM_BUSSES];
     // int numToSend = 0;

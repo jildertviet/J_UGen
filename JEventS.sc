@@ -11,7 +11,8 @@ JEventS : UGen{
 		layer=2,
 		rgba=#[255,255,255,1.0],
 		bFilled=1,
-		mode=0
+		mode=0,
+		busses=#[0,0,0,0,0,0,0,0,0,0],
 		|
 		^this.multiNew('control',
 		id,
@@ -37,7 +38,17 @@ JEventS : UGen{
 		rgba[2],
 		rgba[3],
 		bFilled,
-		mode
+		mode,
+		busses[0],
+		busses[1],
+		busses[2],
+		busses[3],
+		busses[4],
+		busses[5],
+		busses[6],
+		busses[7],
+		busses[8],
+		busses[9],
 		);
 	}
 }
