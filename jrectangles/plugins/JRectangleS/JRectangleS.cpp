@@ -11,19 +11,9 @@ namespace JRectangleS {
 JRectangleS::JRectangleS() {
     mCalcFunc = make_calc_function<JRectangleS, &JRectangleS::next>();
     type = jevent::JRectangle;
-
     init(); // readValues + create
-    // next(1); // Am I missing the first trigger if I don't do this?
+    next(1); // Am I missing the first trigger if I don't do this?
 }
-
-// void JRectangleS::clearUpdateArray(){
-  // memset(bNeedsUpdate, 0x00, sizeof(bool)*NUM_BUSSES); // All false?
-  // numToSend = 0;
-// }
-
-// JRectangleS::~JRectangleS(){
-
-// }
 
 void JRectangleS::next(int inNumSamples) {
     JEventBaseS::next(inNumSamples);

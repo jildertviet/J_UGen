@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g -shared  -o JBufferSender_supernova.so CMakeFiles/JBufferSender_supernova.dir/plugins/JBufferSender/JBufferSender.cpp.o 

@@ -179,7 +179,7 @@ CMakeFiles/JRectangleS_supernova.dir/plugins/JRectangleS/JRectangleS.cpp.o: \
  /home/jildert/Downloads/supercollider/include/common/function_attributes.h \
  /home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jrectangles/plugins/JRectangleS/JRectangleS.hpp \
  /home/jildert/Downloads/supercollider/include/common/SC_Reply.h \
- /home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jeventbases/plugins/JEventBaseS/JEventBaseS.hpp \
+ /home/jildert/.local/share/SuperCollider/Extensions/J_UGen/JEventBaseS.hpp \
  /home/jildert/of_v0.11.2_linux64gcc6_release/addons/ofxJVisuals/src/Event/JEventBase.hpp \
  /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/glm.hpp \
  /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/detail/_fixes.hpp \

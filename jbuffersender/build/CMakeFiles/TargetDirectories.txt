@@ -1,0 +1,8 @@
+/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jbuffersender/build/CMakeFiles/JBufferSender_scsynth.dir
+/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jbuffersender/build/CMakeFiles/JBufferSender_supernova.dir
+/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jbuffersender/build/CMakeFiles/edit_cache.dir
+/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jbuffersender/build/CMakeFiles/rebuild_cache.dir
+/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jbuffersender/build/CMakeFiles/list_install_components.dir
+/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jbuffersender/build/CMakeFiles/install.dir
+/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jbuffersender/build/CMakeFiles/install/local.dir
+/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jbuffersender/build/CMakeFiles/install/strip.dir

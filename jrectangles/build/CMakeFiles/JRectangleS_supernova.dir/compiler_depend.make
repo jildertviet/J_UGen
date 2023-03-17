@@ -208,7 +208,7 @@ CMakeFiles/JRectangleS_supernova.dir/plugins/JRectangleS/JRectangleS.cpp.o: ../p
   /home/jildert/Downloads/supercollider/include/common/function_attributes.h \
   ../plugins/JRectangleS/JRectangleS.hpp \
   /home/jildert/Downloads/supercollider/include/common/SC_Reply.h \
-  /home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jeventbases/plugins/JEventBaseS/JEventBaseS.hpp \
+  /home/jildert/.local/share/SuperCollider/Extensions/J_UGen/JEventBaseS.hpp \
   /home/jildert/of_v0.11.2_linux64gcc6_release/addons/ofxJVisuals/src/Event/JEventBase.hpp \
   /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/glm.hpp \
   /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/detail/_fixes.hpp \
@@ -1074,8 +1074,6 @@ CMakeFiles/JRectangleS_supernova.dir/plugins/JRectangleS/JRectangleS.cpp.o: ../p
 
 /usr/include/c++/11/bits/stl_heap.h:
 
-/home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/ext/vector_int2_precision.hpp:
-
 /usr/include/c++/11/bits/std_function.h:
 
 /usr/include/c++/11/bits/stl_tempbuf.h:
@@ -1115,6 +1113,10 @@ CMakeFiles/JRectangleS_supernova.dir/plugins/JRectangleS/JRectangleS.cpp.o: ../p
 /usr/include/c++/11/bits/invoke.h:
 
 /usr/include/c++/11/bits/functional_hash.h:
+
+/home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/ext/vector_int2_precision.hpp:
+
+/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/JEventBaseS.hpp:
 
 /usr/include/c++/11/bits/move.h:
 
@@ -1248,10 +1250,6 @@ CMakeFiles/JRectangleS_supernova.dir/plugins/JRectangleS/JRectangleS.cpp.o: ../p
 
 /home/jildert/Downloads/supercollider/include/common/SC_Reply.h:
 
-/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jeventbases/plugins/JEventBaseS/JEventBaseS.hpp:
-
-/home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/detail/qualifier.hpp:
-
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/include/x86_64-linux-gnu/asm/socket.h:
@@ -1313,6 +1311,8 @@ CMakeFiles/JRectangleS_supernova.dir/plugins/JRectangleS/JRectangleS.cpp.o: ../p
 /usr/include/asm-generic/errno-base.h:
 
 /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/fwd.hpp:
+
+/home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/detail/qualifier.hpp:
 
 /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm/ext/matrix_double4x2_precision.hpp:
 

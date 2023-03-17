@@ -1,0 +1,26 @@
+class:: JBufferSender
+summary:: Sends a buffer over OSC on a trigger
+related:: TODO
+categories:: UGens>TODO
+
+description::
+
+Sends a buffer over OSC on a trigger
+
+
+classmethods::
+
+method::ar, kr
+
+argument::TODO
+
+argument::TODO
+
+
+examples::
+
+code::
+
+{ JBufferSender.ar(/* TODO */) }.play
+
+::

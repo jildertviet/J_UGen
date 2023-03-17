@@ -12,8 +12,11 @@ JEventS : UGen{
 		rgba=#[255,255,255,1.0],
 		bFilled=1,
 		mode=0,
-		busses=#[0,0,0,0,0,0,0,0,0,0],
+		busses=#[0,0,0,0,0,0,0,0,0,0]
 		|
+		if(busses.size < 10, {
+		busses = (busses ++ [0]).clipExtend(10)
+	});
 		^this.multiNew('control',
 		id,
 		Impulse.kr(120),
