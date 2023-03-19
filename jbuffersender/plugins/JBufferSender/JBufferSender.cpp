@@ -71,7 +71,7 @@ void JBufferSender::next(int nSamples) {
     float msg[bufFrames+2];
     msg[0] = targetID;
     msg[1] = targetSubID;
-    memcpy(msg+2, bufData, bufFrames);
+    memcpy(msg+2, bufData, bufFrames * sizeof(float));
     SendNodeReply(&(this->mParent->mNode), 0, "/buffer", bufFrames+2, msg);
 
     RELEASE_SNDBUF_SHARED(buf);
