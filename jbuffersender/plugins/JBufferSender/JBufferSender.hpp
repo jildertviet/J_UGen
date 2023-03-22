@@ -16,10 +16,12 @@ public:
 
     double m_phase;
      float m_prevtrig;
-     float m_fbufnum;
+     float m_fbufnum = -1;
      float m_failedBufNum;
      SndBuf* m_buf;
      double sc_loop(Unit* unit, double in, double hi, int loop);
+     float targetID = -1;
+     float targetSubID = 0;
 private:
     // Calc function
     void next(int nSamples);

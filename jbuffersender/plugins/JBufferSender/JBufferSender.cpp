@@ -6,6 +6,37 @@
 
 namespace JBufferSender {
 
+#define GET_BUF_SHARED_CUSTOM \
+float fbufnum = ((mInBuf[0])[0]);    ;                                                                                       \
+  if (fbufnum < 0.f) {                                                                                               \
+      fbufnum = 0.f; \
+  } \
+  if (fbufnum != m_fbufnum) {                                                                                  \
+      uint32 bufnum = (int)fbufnum;                                                                                  \
+      World* world = mWorld;                                                                                   \
+      if (bufnum >= world->mNumSndBufs) {                                                                            \
+          int localBufNum = bufnum - world->mNumSndBufs;                                                             \
+          Graph* parent = mParent;                                                                             \
+          if (localBufNum <= parent->localBufNum) {                                                                  \
+              m_buf = parent->mLocalSndBufs + localBufNum;                                                     \
+          } else {                                                                                                   \
+              bufnum = 0;                                                                                            \
+              m_buf = world->mSndBufs + bufnum;                                                                \
+          }                                                                                                          \
+      } else {                                                                                                       \
+          m_buf = world->mSndBufs + bufnum;                                                                    \
+      }                                                                                                              \
+      m_fbufnum = fbufnum;                                                                                     \
+  }                                                                                                                  \
+  const SndBuf* buf = m_buf;                                                                                   \
+  LOCK_SNDBUF_SHARED(buf);                                                                                           \
+  const float* bufData __attribute__((__unused__)) = buf->data;                                                      \
+  uint32 bufChannels __attribute__((__unused__)) = buf->channels;                                                    \
+  uint32 bufSamples __attribute__((__unused__)) = buf->samples;                                                      \
+  uint32 bufFrames = buf->frames;                                                                                    \
+  int mask __attribute__((__unused__)) = buf->mask;                                                                  \
+  int guardFrame __attribute__((__unused__)) = bufFrames - 2;
+
 #define CHECK_BUFFER_DATA                                                                                              \
     if (!bufData) {                                                                                                    \
         if (this->mWorld->mVerbosity > -1 && !this->mDone && (this->m_failedBufNum != fbufnum)) {                      \
@@ -29,52 +60,34 @@ JBufferSender::JBufferSender() {
     type = jevent::JBufferSender;
     // init();
     // next(1);
+    targetID = in(2)[0];
+    targetSubID = in(3)[0];
+
     ClearUnitOutputs(this, 1);
+
+    cout << "End of const" << endl;
 }
 
 void JBufferSender::next(int nSamples) {
-    if(!checkTrigger(nSamples)){
+  if(!checkTrigger(nSamples)){
       return;
-    }
+  }
+  GET_BUF_SHARED_CUSTOM
+  int numOutputs = mNumOutputs;
+  CHECK_BUFFER_DATA
 
-    float fbufnum = in(0)[0]; // From PlayBuf cpp
-    if (fbufnum != m_fbufnum) {
-        uint32 bufnum = (int)fbufnum;
-        World* world = mWorld;
-        if (bufnum >= world->mNumSndBufs)
-            bufnum = 0;
-        m_fbufnum = fbufnum;
-        m_buf = world->mSndBufs + bufnum;
-    }
-    const SndBuf* buf = m_buf;
-    ACQUIRE_SNDBUF_SHARED(buf);
+  if(bufFrames > 2000 || bufFrames <= 0){
+    cout << "Buffer > 2000 frames or 0 frames, not supported" << endl;
+    return;
+  }
 
-    const float* bufData __attribute__((__unused__)) = buf->data;
-    uint32 bufChannels __attribute__((__unused__)) = buf->channels;
-    uint32 bufSamples __attribute__((__unused__)) = buf->samples;
-    uint32 bufFrames = buf->frames;
-    // int mask __attribute__((__unused__)) = buf->mask;
-    // int guardFrame __attribute__((__unused__)) = bufFrames - 2;
+  float msg[bufFrames+2];
+  msg[0] = targetID;
+  msg[1] = targetSubID;
+  memcpy(msg+2, bufData, bufFrames * sizeof(float));
+  SendNodeReply(&(this->mParent->mNode), 0, "/buffer", bufFrames+2, msg);
 
-    int numOutputs = mNumOutputs;
-
-    if(bufFrames > 2000 || bufFrames <= 0){
-      cout << "Buffer > 2000 frames or 0 frames, not supported" << endl;
-      return;
-    }
-
-    CHECK_BUFFER_DATA;
-
-    float targetID = in(2)[0];
-    float targetSubID = in(3)[0];
-
-    float msg[bufFrames+2];
-    msg[0] = targetID;
-    msg[1] = targetSubID;
-    memcpy(msg+2, bufData, bufFrames * sizeof(float));
-    SendNodeReply(&(this->mParent->mNode), 0, "/buffer", bufFrames+2, msg);
-
-    RELEASE_SNDBUF_SHARED(buf);
+  // RELEASE_SNDBUF_SHARED(buf);
 }
 
 

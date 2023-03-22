@@ -11,7 +11,7 @@ values = #[0,0,0,0,0]
 		^this.multiNew('control',
       id,
       trigger,
-      targetID,
+      Float.from32Bits(targetID),
       subID,
       functionID,
 			values[0],

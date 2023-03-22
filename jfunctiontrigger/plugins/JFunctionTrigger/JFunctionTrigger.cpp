@@ -43,7 +43,6 @@ void JFunctionTrigger::next(int inNumSamples) {
             msg[i] = in(2+i)[0];
           }
           SendNodeReply(&(this->mParent->mNode), encodedInt(), "/trigger", 8, &msg[0]);
-          cout << "TRIG" << endl;
       }
       prevtrig = curtrig;
   }
