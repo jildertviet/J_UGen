@@ -43,6 +43,9 @@ function(sc_add_server_plugin_properties target is_supernova)
         ${SC_PATH}/include/plugin_interface
         ${SC_PATH}/include/common
         ${SC_PATH}/common
+        ${SC_PATH}/server/scsynth
+        ${SC_PATH}/external_libraries/boost_sync/include/
+        ${SC_PATH}/external_libraries/TLSF-2.4.6/src
 
         /home/jildert/of_v0.11.2_linux64gcc6_release/addons/ofxJVisuals/src/Event
         /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm

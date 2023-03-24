@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DJBufferSender_scsynth_EXPORTS -DNOVA_SIMD
 
-CXX_INCLUDES = -I/home/jildert/Downloads/supercollider/external_libraries/nova-simd -I/home/jildert/Downloads/supercollider/include/plugin_interface -I/home/jildert/Downloads/supercollider/include/common -I/home/jildert/Downloads/supercollider/common -I/home/jildert/of_v0.11.2_linux64gcc6_release/addons/ofxJVisuals/src/Event -I/home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm -I/home/jildert/.local/share/SuperCollider/Extensions/J_UGen -I/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jeventbases/plugins/JEventBaseS
+CXX_INCLUDES = -I/home/jildert/Downloads/supercollider/external_libraries/nova-simd -I/home/jildert/Downloads/supercollider/include/plugin_interface -I/home/jildert/Downloads/supercollider/include/common -I/home/jildert/Downloads/supercollider/common -I/home/jildert/Downloads/supercollider/server/scsynth -I/home/jildert/Downloads/supercollider/external_libraries/boost_sync/include -I/home/jildert/Downloads/supercollider/external_libraries/TLSF-2.4.6/src -I/home/jildert/of_v0.11.2_linux64gcc6_release/addons/ofxJVisuals/src/Event -I/home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm -I/home/jildert/.local/share/SuperCollider/Extensions/J_UGen -I/home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jeventbases/plugins/JEventBaseS
 
 CXX_FLAGS = -g -fPIC -fvisibility=hidden -std=gnu++17
 

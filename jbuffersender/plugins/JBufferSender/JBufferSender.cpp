@@ -3,6 +3,10 @@
 
 #include "SC_PlugIn.hpp"
 #include "JBufferSender.hpp"
+#include "scsynthsend.h"
+#include "SC_Node.h"
+#include "SC_ReplyImpl.hpp"
+#include "SC_HiddenWorld.h"
 
 namespace JBufferSender {
 
@@ -81,13 +85,19 @@ void JBufferSender::next(int nSamples) {
     return;
   }
 
-  float msg[bufFrames+2];
-  msg[0] = targetID;
-  msg[1] = targetSubID;
-  memcpy(msg+2, bufData, bufFrames * sizeof(float));
-  SendNodeReply(&(this->mParent->mNode), 0, "/buffer", bufFrames+2, msg);
+  small_scpacket packet;
+  packet.adds("/buffer");
+  packet.maketags(4);
+  packet.addtag(',');
+  packet.addtag('f');
+  packet.addf(targetID);
+  packet.addtag('f');
+  packet.addf(targetSubID);
+  packet.addtag('b');
+  packet.addb((unsigned char*)bufData, bufFrames * sizeof(float));
 
-  // RELEASE_SNDBUF_SHARED(buf);
+  for (auto addr : *mWorld->hw->mUsers)
+      SendReply(&addr, packet.data(), packet.size());
 }
 
 
