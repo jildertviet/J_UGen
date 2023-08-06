@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -g -shared  -o JLineS_supernova.so CMakeFiles/JLineS_supernova.dir/plugins/JLineS/JLineS.cpp.o 

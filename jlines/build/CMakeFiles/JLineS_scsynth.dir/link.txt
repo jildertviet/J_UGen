@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -g -shared  -o JLineS_scsynth.so CMakeFiles/JLineS_scsynth.dir/plugins/JLineS/JLineS.cpp.o 
