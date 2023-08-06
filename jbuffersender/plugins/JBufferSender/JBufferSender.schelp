@@ -21,6 +21,41 @@ examples::
 
 code::
 
-{ JBufferSender.ar(/* TODO */) }.play
+j = {JLineS.kr(mode: 2, size: [\width.kr(1080), 200, 0]);}.play(~of);
+b = Buffer.alloc(~of, 1000);
 
+(
+~bufSend = {
+	var t = Impulse.kr(50);
+	var n = (SinOsc.ar(50 + LFDNoise1.kr(1).range(0, 20)) + 1.0) * 100 + 100; // Range: 100, yOffset: 100
+	RecordBuf.ar(n, b, trigger: DelayN.kr(t, delaytime: 0.01));
+	JBufferSender.kr(bufnum: b, trigger: t, targetID: j.nodeID, subID: 0.0);
+	// PlayBuf.ar(1, b);
+	JFunctionTrigger.kr(id: 1, trigger: t, targetID: j.nodeID, functionID: 1);
+}.play(~of);
+)
+
+(
+{
+	5.do{
+		|i|
+		j = {JLineS.kr(mode: 2, size: [\width.kr(1080), 200, 0], rgba: (255!3) ++ (LFDNoise3.ar(1).range(0, 1) * 0.8));}.play(~of);
+		b = Buffer.alloc(~of, 500);
+		{j.set(\width, 1080 + 150)}.defer(0.1);
+
+		(
+			~bufSend = {
+				var t = Impulse.kr(50);
+				var n = (SinOsc.ar(50.1 + 0.1.rand).pow(4) + 1.0) * 100;
+				n = n * LFPulse.ar(400.2 + 0.01.rand).range(-0.5, 0.5);
+				n = n + 100 + (i*200);
+				RecordBuf.ar(n, b, trigger: DelayN.kr(t, delaytime: 0.077));
+				JBufferSender.kr(bufnum: b, trigger: t, targetID: j.nodeID, subID: 0.0);
+				JFunctionTrigger.kr(id: 1, trigger: t, targetID: j.nodeID, functionID: 1);
+			}.play(~of);
+		);
+		1.wait;
+	}
+}.fork;
+)
 ::

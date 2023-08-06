@@ -11,15 +11,10 @@ classmethods::
 
 method::ar, kr
 
-argument::TODO
-
-argument::TODO
-
-
 examples::
 
 code::
 
-{ JRectangleS.ar(/* TODO */) }.play
+{JRectangleS.kr(id: 0, loc: [0, 0, 0], speed: 0, rgba: [LFSaw.kr(1).range(0, 255), 255, 255, 1.0]);}.play(~of);
 
 ::

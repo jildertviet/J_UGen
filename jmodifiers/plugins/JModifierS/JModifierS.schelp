@@ -5,8 +5,10 @@ categories:: UGens>TODO
 
 description::
 
-Modifier (Array) for ofxJVisuals
+Modifier (Array) for ofxJVisuals.
+Use mode for type of Modifier
 
+0: Array
 
 classmethods::
 
@@ -21,6 +23,29 @@ examples::
 
 code::
 
-{ JModifierS.ar(/* TODO */) }.play
+// targetSubID = busses[0]
+
+// dimensions[0] = &busses[1];
+// dimensions[1] = &busses[2];
+// spacing[0] = &busses[3];
+// spacing[1] = &busses[4];
+
+(
+var num = 2;
+r = {
+	inf.do{
+		num.do{
+			|i|
+			x = {
+				var dimensions = [1, 100];
+				var spacing = [1, [10, 20, 30, 40, 60].choose];
+				var env = Env.perc(0.5, 0.6, curve: -9).kr(Done.freeSelf);
+				var r = JRectangleS.kr(1, loc: [(1080/num)*i, 0, 0], size: [(1080/num/2), 1, 0], rgba: 255!3 ++ env);
+				var m = JModifierS.kr(0, busses:[1, dimensions[0], dimensions[1], spacing[0], spacing[1]]); }.play(~of);
+		};
+		1.wait;
+	}
+}.fork;
+)
 
 ::
