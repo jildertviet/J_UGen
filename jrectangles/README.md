@@ -2,7 +2,7 @@
 
 Author: Jildert Viet
 
-JRectangleS UGen for ofxJVisuals
+JRectangle for ofxJVisuals SC server
 
 ### Requirements
 
@@ -13,8 +13,8 @@ JRectangleS UGen for ofxJVisuals
 
 Clone the project:
 
-    git clone https://github.com/jildertviet/JRectangleS
-    cd JRectangleS
+    git clone https://github.com/jildertviet/jrectangles
+    cd jrectangles
     mkdir build
     cd build
 

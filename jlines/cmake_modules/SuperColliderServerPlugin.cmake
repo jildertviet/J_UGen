@@ -44,11 +44,10 @@ function(sc_add_server_plugin_properties target is_supernova)
         ${SC_PATH}/include/common
         ${SC_PATH}/common
 
-
                 /home/jildert/of_v0.11.2_linux64gcc6_release/addons/ofxJVisuals/src/Event
                 /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm
-                /home/jildert/.local/share/SuperCollider/Extensions/J_UGen
-                /home/jildert/.local/share/SuperCollider/Extensions/J_UGen/jeventbases/plugins/JEventBaseS
+                /home/jildert/.local/share/SuperCollider/J_UGen
+                /home/jildert/.local/share/SuperCollider/J_UGen/jeventbases/plugins/JEventBaseS
     )
 
     # from CompilerConfig module
