@@ -8,7 +8,7 @@ JBufferSender : JEventS {
 		^this.multiNew('control',
 		bufnum,
 		trigger,
-		Float.from32Bits(targetID),
+		if(targetID == 1, 1, Float.from32Bits(targetID)),
 		subID
 		);
 	}

@@ -89,8 +89,13 @@ void JBufferSender::next(int nSamples) {
   packet.adds("/buffer");
   packet.maketags(4);
   packet.addtag(',');
-  packet.addtag('f');
-  packet.addf(targetID);
+  if(targetID == 1){
+    packet.addtag('i');
+    packet.addi(this->mParent->mNode.mID); // Target is in same parent synth
+  } else{
+    packet.addtag('f');
+    packet.addf(targetID); // Gets converted in OF
+  }
   packet.addtag('f');
   packet.addf(targetSubID);
   packet.addtag('b');
