@@ -1,36 +1,44 @@
-class:: JModifierS
+title:: JModifierS
 summary:: Modifier (Array) for ofxJVisuals
 related:: TODO
-categories:: UGens>TODO
+categories:: UGens>Jildert
 
 description::
 
 Modifier (Array) for ofxJVisuals.
 Use mode for type of Modifier
 
-0: Array
+TREE::
+##mode 0: type = JModifierArray;
+##mode 1: type = JModifierRedraw;
+	TREE::
+	##busses[0]: targetSubID
+	##busses[1]: redrawMode
+		TREE::
+			##0: change mode
+			##1: change color? TO DO
+		::
+	##busses[2]: modeToSetTo
+	::
+::
 
 classmethods::
 
 method::ar, kr
 
-argument::TODO
-
-argument::TODO
-
-
 examples::
+code::
+// JModifierRedraw
+JModifierS.kr(busses:[targetSubID, 0, 1]); // JModifierRedraw, redraws the target with mode 1.
+JModifierS.kr(busses:[targetSubID, 1, 255, 255, 0, 1.0]); // JModifierRedraw, redraws the target with color rgb(255, 255, 0, 1.0). Not implemented yet.
+::
 
 code::
 
-// targetSubID = busses[0]
+// JModifierArray
+// arguments: [targetSubID,dimensions[0],dimensions[1],spacing[0],spacing[1]]
 
-// dimensions[0] = &busses[1];
-// dimensions[1] = &busses[2];
-// spacing[0] = &busses[3];
-// spacing[1] = &busses[4];
-
-(
+( // Draw multiple columns of horizontal lines
 var num = 2;
 r = {
 	inf.do{
@@ -41,7 +49,7 @@ r = {
 				var spacing = [1, [10, 20, 30, 40, 60].choose];
 				var env = Env.perc(0.5, 0.6, curve: -9).kr(Done.freeSelf);
 				var r = JRectangleS.kr(1, loc: [(1080/num)*i, 0, 0], size: [(1080/num/2), 1, 0], rgba: 255!3 ++ env);
-				var m = JModifierS.kr(0, busses:[1, dimensions[0], dimensions[1], spacing[0], spacing[1]]); }.play(~of);
+				var m = JModifierS.kr(0, busses:[1, dimensions[0], dimensions[1], spacing[0], spacing[1]]); }.play(~of); // Array modifier
 		};
 		1.wait;
 	}

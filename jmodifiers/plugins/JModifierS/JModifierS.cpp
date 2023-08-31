@@ -11,7 +11,8 @@ JModifierS::JModifierS() {
     // next(1);
     readValues();
     switch((int)mode){
-      case 0: type = jevent::JModifierArray;
+      case 0: type = jevent::JModifierArray; break;
+      case 1: type = jevent::JModifierRedraw; break;
     }
     // type = jevent::JModifierS;
     init();

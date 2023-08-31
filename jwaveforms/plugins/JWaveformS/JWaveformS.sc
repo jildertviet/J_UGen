@@ -21,12 +21,13 @@ JWaveform {
 		mode=0,
 		busses=#[0,0,0,0,0,0,0,0,0,0],
 		buffer=0,
-		trigFreq=60
+		trigFreq=1
 		|
 		/* if(busses.size < 10, { */
 			/* busses = (busses ++ [0]).clipExtend(10) */
 		/* }); */
-		^{JWaveformS.kr(
+		^(
+			JWaveformS.kr(
 			id: id,
 			loc: loc,
 			size: size,
@@ -40,10 +41,8 @@ JWaveform {
 			bFilled: bFilled,
 			mode: mode,
 			busses: busses
-		);
-		JBufferSender.kr(bufnum: buffer, trigger: Impulse.kr(trigFreq), targetID: 1, subID: 0.0);
-		1
-	}
+		) + JBufferSender.kr(bufnum: buffer, trigger: Impulse.kr(trigFreq), targetID: 1, subID: id)); // Target the subID of the id set to JWaveformS
+		// targetID 1 means: use the nodeID of this synth
 		/*  */
 		/* ^synth; */
 		/* ^1; */
