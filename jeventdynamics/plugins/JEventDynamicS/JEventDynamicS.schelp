@@ -1,0 +1,28 @@
+class:: JEventDynamicS
+summary:: Dynamic JEvent which is registered on SC-sever. Dynamic means it can create any JEvent @ OF
+related:: TODO
+categories:: UGens>TODO
+
+description::
+
+Dynamic JEvent which is registered on SC-sever. Dynamic means it can create any JEvent @ OF
+
+
+classmethods::
+
+method::ar, kr
+
+argument::TODO
+
+argument::TODO
+
+
+examples::
+
+code::
+
+{ JEventDynamicS.ar(/* TODO */) }.play
+{JEventDynamicS.kr(busses: [2])}.play(~of); // JVorm
+
+
+::
