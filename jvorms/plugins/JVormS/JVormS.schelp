@@ -20,6 +20,11 @@ argument::TODO
 examples::
 
 code::
+busses[0] = numSides;
+busses[1] = sideDiv;
+busses[2] = radius;
+busses[3] = on_destination;
+
 
 { JVormS.ar(/* TODO */) }.play
 

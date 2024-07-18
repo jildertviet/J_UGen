@@ -44,8 +44,8 @@ function(sc_add_server_plugin_properties target is_supernova)
         ${SC_PATH}/include/plugin_interface
         ${SC_PATH}/include/common
 
-        /home/jildert/of_v0.11.2_linux64gcc6_release/addons/ofxJVisuals/src/Event
-        /home/jildert/of_v0.11.2_linux64gcc6_release/libs/glm/include/glm
+        /home/jildert/of_v0.12.0-rc1_linux64gcc6_release/addons/ofxJVisuals/src/Event
+        /home/jildert/of_v0.12.0-rc1_linux64gcc6_release/libs/glm/include/glm
         /home/jildert/.local/share/SuperCollider/J_UGen
         /home/jildert/.local/share/SuperCollider/J_UGen/jeventbases/plugins/JEventBaseS
     )

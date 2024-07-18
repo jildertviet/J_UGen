@@ -12,46 +12,45 @@ JEventS : UGen{
 		rgba=#[255,255,255,1.0],
 		bFilled=1,
 		mode=0,
-		busses=#[0,0,0,0,0,0,0,0,0,0]
+    numBusses=10,
+		busses=#[
+      0,0,0,0,0,0,0,0,0,0,
+      0,0,0,0,0,0,0,0,0,0,
+      0,0,0,0,0,0,0,0,0,0
+    ]
 		|
-		if(busses.size < 10, {
-		busses = (busses ++ [0]).clipExtend(10)
-	});
-		^this.multiNew('control',
-		id,
-		Impulse.kr(120),
-		loc[0],
-		loc[1],
-		loc[2],
-		size[0],
-		size[1],
-		size[2],
-		direction[0],
-		direction[1],
-		direction[2],
-		rotation[0],
-		rotation[1],
-		rotation[2],
-		speed,
-		lineWidth,
-		bMove,
-		layer,
-		rgba[0],
-		rgba[1],
-		rgba[2],
-		rgba[3],
-		bFilled,
-		mode,
-		busses[0],
-		busses[1],
-		busses[2],
-		busses[3],
-		busses[4],
-		busses[5],
-		busses[6],
-		busses[7],
-		busses[8],
-		busses[9],
+		if(busses.size < numBusses, {
+      busses = (busses ++ [0]).clipExtend(numBusses)
+    });
+    if(busses.size > 30, {"Max custom busses: 30".error});
+		^this.multiNew(*[
+      'control',
+      id,
+      Impulse.kr(120),
+      loc[0],
+      loc[1],
+      loc[2],
+      size[0],
+      size[1],
+      size[2],
+      direction[0],
+      direction[1],
+      direction[2],
+      rotation[0],
+      rotation[1],
+      rotation[2],
+      speed,
+      lineWidth,
+      bMove,
+      layer,
+      rgba[0],
+      rgba[1],
+      rgba[2],
+      rgba[3],
+      bFilled,
+      mode, 
+      numBusses]
+      ++ busses.at((0..(numBusses-1)))
 		);
 	}
 }
