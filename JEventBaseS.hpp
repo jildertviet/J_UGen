@@ -28,11 +28,8 @@ public:
     // values =
     // (float **)RTAlloc(this->mWorld, in(24)[0] + NUM_VALUES * sizeof(float));
     // busses = (float *)RTAlloc(this->mWorld, in(24)[0] * sizeof(float));
-    cout << "X" << endl;
     linkValues(in(24)[0]); // set numBusses
-    cout << "Y" << endl;
     readValues();
-    cout << "Z" << endl;
     if (bCreate)
       create();
   }
@@ -64,14 +61,14 @@ public:
   }
 
   void readValues() {
-    cout << "readValues" << endl;
+    // cout << "readValues" << endl;
     for (int i = 0; i < totalNumValues; i++) {
       if (values) {
         if (values[i])
           *values[i] = in(i + 2)[0];
       }
     }
-    cout << "end readValues" << endl;
+    // cout << "end readValues" << endl;
   }
 
   int encodedInt() {
