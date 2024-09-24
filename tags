@@ -2768,7 +2768,7 @@ next	jeventdynamics/plugins/JEventDynamicS/JEventDynamicS.cpp	/^void JEventDynam
 next	jfunctiontrigger/plugins/JFunctionTrigger/JFunctionTrigger.cpp	/^void JFunctionTrigger::next(int inNumSamples) {$/;"	f	class:JFunctionTrigger::JFunctionTrigger	typeref:typename:void
 next	jlines/plugins/JLineS/JLineS.cpp	/^void JLineS::next(int nSamples) {$/;"	f	class:JLineS::JLineS	typeref:typename:void
 next	jmodifiers/plugins/JModifierS/JModifierS.cpp	/^void JModifierS::next(int nSamples) {$/;"	f	class:JModifierS::JModifierS	typeref:typename:void
-next	jrectangles/plugins/JRectangleS/JRectangleS.cpp	/^void JRectangleS::next(int inNumSamples) {$/;"	f	class:JRectangleS::JRectangleS	typeref:typename:void
+next	jrectangles/plugins/JRectangleS/JRectangleS.cpp	/^void JRectangleS::next(int inNumSamples) { JEventBaseS::next(inNumSamples); }$/;"	f	class:JRectangleS::JRectangleS	typeref:typename:void
 next	jvorms/plugins/JVormS/JVormS.cpp	/^void JVormS::next(int nSamples) {$/;"	f	class:JVormS::JVormS	typeref:typename:void
 next	jwaveforms/plugins/JWaveformS/JWaveformS.cpp	/^void JWaveformS::next(int nSamples) {$/;"	f	class:JWaveformS::JWaveformS	typeref:typename:void
 ofColor	ofColor.h	/^  ofColor(){}$/;"	f	class:ofColor

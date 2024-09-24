@@ -561,7 +561,7 @@ main	build/CMakeFiles/3.25.1/CompilerIdC/CMakeCCompilerId.c	/^int main(argc, arg
 main	build/CMakeFiles/3.25.1/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f	typeref:typename:void
 main	build/CMakeFiles/3.25.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f	typeref:typename:int
 msg_end	cmake_modules/SuperColliderServerPlugin.cmake	/^        set(msg_end "\\nPlease set SC_PATH to the root folder of the SuperCollider project relat/;"	v	function:sc_check_sc_path
-next	plugins/JRectangleS/JRectangleS.cpp	/^void JRectangleS::next(int inNumSamples) {$/;"	f	class:JRectangleS::JRectangleS	typeref:typename:void
+next	plugins/JRectangleS/JRectangleS.cpp	/^void JRectangleS::next(int inNumSamples) { JEventBaseS::next(inNumSamples); }$/;"	f	class:JRectangleS::JRectangleS	typeref:typename:void
 path	cmake_modules/SuperColliderServerPlugin.cmake	/^        set(path "${sc_path_default}")$/;"	v	function:sc_check_sc_path
 plugins/JRectangleS/JRectangleS.cpp.i	build/Makefile	/^plugins\/JRectangleS\/JRectangleS.cpp.i:$/;"	t
 plugins/JRectangleS/JRectangleS.cpp.o	build/Makefile	/^plugins\/JRectangleS\/JRectangleS.cpp.o:$/;"	t
