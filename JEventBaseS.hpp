@@ -15,6 +15,7 @@ namespace JEventBaseS {
 
 class JEventBaseS : public SCUnit, public JEventBase {
 public:
+  static void JEventBaseS_Ctor(JEventBaseS *unit) { cout << "Ctor!!!" << endl; }
   JEventBaseS() {}
   ~JEventBaseS() {
     cout << "Delete" << endl;

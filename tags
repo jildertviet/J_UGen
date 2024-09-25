@@ -1870,6 +1870,7 @@ JBufferSender_supernova/fast	jbuffersender/build/Makefile	/^JBufferSender_supern
 JEventBaseS	JEventBaseS.hpp	/^  JEventBaseS() {}$/;"	f	class:JEventBaseS::JEventBaseS
 JEventBaseS	JEventBaseS.hpp	/^class JEventBaseS : public SCUnit, public JEventBase {$/;"	c	namespace:JEventBaseS
 JEventBaseS	JEventBaseS.hpp	/^namespace JEventBaseS {$/;"	n
+JEventBaseS_Ctor	JEventBaseS.hpp	/^  static void JEventBaseS_Ctor(JEventBaseS *unit) { cout << "Ctor!!!" << endl; }$/;"	f	class:JEventBaseS::JEventBaseS	typeref:typename:void
 JEventDynamicS	jeventdynamics/README.md	/^# JEventDynamicS$/;"	c
 JEventDynamicS	jeventdynamics/plugins/JEventDynamicS/JEventDynamicS.cpp	/^JEventDynamicS::JEventDynamicS() {$/;"	f	class:JEventDynamicS::JEventDynamicS
 JEventDynamicS	jeventdynamics/plugins/JEventDynamicS/JEventDynamicS.cpp	/^namespace JEventDynamicS {$/;"	n	file:

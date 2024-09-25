@@ -26,4 +26,5 @@ PluginLoad(JEventDynamicSUGens) {
   // Plugin magic
   ft = inTable;
   registerUnit<JEventDynamicS::JEventDynamicS>(ft, "JEventDynamicS", false);
+  // DefineSimpleUnit(JEventDynamicS);
 }
