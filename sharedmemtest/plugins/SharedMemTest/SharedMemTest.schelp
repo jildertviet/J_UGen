@@ -1,0 +1,26 @@
+class:: SharedMemTest
+summary:: Test libsharedmemory
+related:: TODO
+categories:: UGens>TODO
+
+description::
+
+Test libsharedmemory
+
+
+classmethods::
+
+method::ar, kr
+
+argument::TODO
+
+argument::TODO
+
+
+examples::
+
+code::
+
+{ SharedMemTest.ar(/* TODO */) }.play
+
+::

@@ -15,6 +15,7 @@ JEventDynamicS::JEventDynamicS() {
   char temp = busses[0];
   memcpy(&type, &temp, 1);
   create();
+  cout << "X" << endl;
   // next(1);
 }
 

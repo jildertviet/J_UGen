@@ -7,6 +7,13 @@
 #include "SC_PlugIn.hpp"
 #include "SC_Reply.h"
 #include <iostream>
+
+// #define JV_SHAREDMEM
+#ifdef JV_SHAREDMEM
+#include "libsharedmemory.hpp"
+#include <memory>
+#endif
+
 using namespace std;
 
 static InterfaceTable *ft;
@@ -23,18 +30,33 @@ public:
     // RTFree(this->mWorld, values);
     // RTFree(this->mWorld, busses);
   }
+#ifdef JV_SHAREDMEM
+  std::shared_ptr<lsm::SharedMemoryWriteStream> writer;
+  string idString = "";
+#endif
+
   void init(bool bCreate = true) {
-    // std::cout << "X" << std::endl;
     subID = in(0)[0];
-    // values =
-    // (float **)RTAlloc(this->mWorld, in(24)[0] + NUM_VALUES * sizeof(float));
-    // busses = (float *)RTAlloc(this->mWorld, in(24)[0] * sizeof(float));
     linkValues(in(24)[0]); // set numBusses
     readValues();
     if (bCreate)
       create();
   }
   void create() {
+#ifdef JV_SHAREDMEM
+    idString = "";
+    idString += to_string((int)this->mParent->mNode.mID);
+    idString += ",";
+    idString += to_string(subID); // Don't need to send it, server (ofxJVisuals)
+    // receives nodeID and subID
+    // cout << idString << endl;
+
+    // auto stream = std::make_shared<SharedMemoryWriteStream>(name, bufferSize,
+    // isPersistent);
+    writer = std::make_shared<lsm::SharedMemoryWriteStream>(
+        idString, 265,
+        true); // Allocate shared memory
+#endif
     SendNodeReply(&(this->mParent->mNode), encodedInt(), "/create",
                   totalNumValues, valuesToFloatArray());
   }
@@ -56,8 +78,13 @@ public:
     // cout << "Update" << endl;
     readValues();
     valuesToFloatArray(); // Can't allocate memory dynamically?
+#ifdef JV_SHAREDMEM
+    // cout << "Write" << endl;
+    writer->write(valuesToSend, 64);
+#else
     SendNodeReply(&(this->mParent->mNode), subID, "/update", totalNumValues,
                   valuesToSend);
+#endif
     // cout << "End update" << endl;
   }
 
